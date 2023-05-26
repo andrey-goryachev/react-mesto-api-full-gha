@@ -1,0 +1,11 @@
+.button {
+  transition: opacity .4s ease;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: none;
+}

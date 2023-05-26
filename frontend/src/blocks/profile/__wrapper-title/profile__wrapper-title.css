@@ -1,0 +1,13 @@
+.profile__wrapper-title {
+  display: flex;
+  gap: 18px;
+  overflow: visible;
+}
+
+@media screen and (max-width: 425px) {
+  .profile__wrapper-title {
+    justify-content: center;
+    padding-left: 27px;
+    gap: 10px;
+  }
+}

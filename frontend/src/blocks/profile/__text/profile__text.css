@@ -1,0 +1,30 @@
+.profile__text {
+  margin: 0;
+  padding: 9px 0 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  font-style: normal;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__text {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__text {
+    padding-top: 7px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
