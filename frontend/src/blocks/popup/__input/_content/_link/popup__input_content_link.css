@@ -1,8 +1,0 @@
-.popup__input_content_link {
-  /*margin-bottom: 48px;*/
-}
-
-.popup__input_content_link::-webkit-input-placeholder {color:#C4C4C4;}
-.popup__input_content_link::-moz-placeholder          {color:#C4C4C4;}
-.popup__input_content_link::-ms-input-placeholder     {color:#C4C4C4;}
-.popup__input_content_link::placeholder               {color:#C4C4C4;}
