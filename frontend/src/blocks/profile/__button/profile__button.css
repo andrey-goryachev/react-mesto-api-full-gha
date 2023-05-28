@@ -1,0 +1,16 @@
+.profile__button {
+  padding: 0;
+  margin: 6px 0 0;
+  border: none;
+  background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-self: center;
+}
+
+@media screen and (max-width: 425px) {
+  .profile__button {
+    margin-top: 1px;
+  }
+}
+

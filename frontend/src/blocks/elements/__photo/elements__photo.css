@@ -1,0 +1,13 @@
+.elements__photo {
+  display: block;
+  min-width: 282px;
+  height: 282px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  flex: 1;
+}
+
+.elements__photo:hover {
+  cursor: pointer;
+}

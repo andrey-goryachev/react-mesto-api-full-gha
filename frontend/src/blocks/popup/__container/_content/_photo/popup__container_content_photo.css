@@ -1,0 +1,14 @@
+.popup__container_content_photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 75vw;
+  max-height: 75vh;
+  min-height: auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+

@@ -1,0 +1,11 @@
+.popup__container_content_success {
+    /* background-color: red; */
+    min-width: 430px;
+    min-height: 330px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 60px;
+    padding-bottom: 13px;
+}
