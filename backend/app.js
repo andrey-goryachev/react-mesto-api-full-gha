@@ -2,6 +2,7 @@ const express = require('express');
 const { errors } = require('celebrate');
 const mongoose = require('mongoose');
 const router = require('./routes/index');
+const cors = require('cors')
 const { handleErrors } = require('./errors/errors');
 const { mongoPath } = require('./config');
 const {
@@ -12,6 +13,7 @@ const {
 const { PORT = 3000 } = process.env;
 
 const app = express();
+app.use(cors())
 
 mongoose.connect(mongoPath, { autoIndex: true });
 
