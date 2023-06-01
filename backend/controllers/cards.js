@@ -6,9 +6,8 @@ const {
 
 const getCards = (req, res, next) => {
   Card.find({})
-    .populate('owner')
-    .populate('likes')
-    .then((cards) => res.send({ cards }))
+    .populate(['owner', 'likes'])
+    .then((cards) => res.send(cards))
     .catch(next);
 };
 
@@ -16,7 +15,13 @@ const createCard = (req, res, next) => {
   const { name, link } = req.body;
   const owner = req.user._id;
   Card.create({ name, link, owner })
-    .then((card) => res.status(201).send({ card }))
+    // .populate('owner')
+    .then((card) => {
+      Card.findById(card._id)
+        .populate(['owner', 'likes'])
+        .then((card) => res.status(201).send(card))
+        .catch(next);
+    })
     .catch(next);
 };
 
@@ -42,11 +47,12 @@ const addLike = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
+    .populate(['owner', 'likes'])
     .then((card) => {
       if (!card) {
         throw new NotFoundError('Карточка не найдена');
       }
-      res.send({ card });
+      res.send(card);
     })
     .catch(next);
 };
@@ -57,11 +63,12 @@ const removeLike = (req, res, next) => {
     { $pull: { likes: req.user._id } },
     { new: true },
   )
+    .populate(['owner', 'likes'])
     .then((card) => {
       if (!card) {
         throw new NotFoundError('Карточка не найдена');
       }
-      res.send({ card });
+      res.send(card);
     })
     .catch(next);
 };
