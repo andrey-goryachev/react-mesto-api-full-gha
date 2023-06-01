@@ -36,7 +36,7 @@ const deleteCard = (req, res, next) => {
         throw new NotOwnerEntityError('Вы не владелец карточки');
       }
       return card.deleteOne()
-        .then((deletedCard) => res.send(deletedCard));
+        .then(() => res.send({"message":"Пост удалён"}));
     })
     .catch(next);
 };
