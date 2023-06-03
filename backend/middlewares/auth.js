@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { NotAuthError } = require('../errors/errors');
 const { secretKey } = require('../config');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 // eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
@@ -14,7 +15,7 @@ module.exports = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, secretKey);
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : secretKey);
   } catch (err) {
     return next(new NotAuthError('Необходима авторизация'));
   }
