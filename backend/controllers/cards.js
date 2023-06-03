@@ -19,7 +19,7 @@ const createCard = (req, res, next) => {
     .then((card) => {
       Card.findById(card._id)
         .populate(['owner', 'likes'])
-        .then((card) => res.status(201).send(card))
+        .then((fullCard) => res.status(201).send(fullCard))
         .catch(next);
     })
     .catch(next);
@@ -36,7 +36,7 @@ const deleteCard = (req, res, next) => {
         throw new NotOwnerEntityError('Вы не владелец карточки');
       }
       return card.deleteOne()
-        .then(() => res.send({"message":"Пост удалён"}));
+        .then(() => res.send({ message: 'Пост удалён' }));
     })
     .catch(next);
 };
