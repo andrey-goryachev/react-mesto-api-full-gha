@@ -10,7 +10,10 @@ const {
   requestLogger,
   errorLogger,
 } = require('./middlewares/logger');
-const { DB_ADDRESS, PORT } = process.env;
+const {
+  DB_ADDRESS = 'mongodb://127.0.0.1:27017/mestodb',
+  PORT = 3000,
+} = process.env;
 
 mongoose.connect(DB_ADDRESS, { autoIndex: true });
 
@@ -35,3 +38,6 @@ app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Приложение запущено, порт ${PORT}`);
 });
+
+
+
