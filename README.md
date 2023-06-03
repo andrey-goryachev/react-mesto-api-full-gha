@@ -8,6 +8,6 @@
 
 ## Ссылки на проект
 
-IP 51.250.93.206
-Frontend  https://gorand.nomoredomains.rocks
-Backend  https://api.gorand.nomoredomains.rocks
+- IP 51.250.93.206
+- Frontend  https://gorand.nomoredomains.rocks
+- Backend  https://api.gorand.nomoredomains.rocks
