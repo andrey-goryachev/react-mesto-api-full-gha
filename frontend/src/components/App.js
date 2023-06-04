@@ -152,13 +152,14 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
-          localStorage.removeItem('token')
+          setLoggedIn(false);
           navigate('/sign-in', { replace: true });
         });
     } else {
       setLoggedIn(false);
+      navigate('/sign-in', { replace: true });
     }
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     loggedIn &&

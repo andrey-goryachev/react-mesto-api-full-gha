@@ -1,6 +1,6 @@
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 
-function Header({ logoPath, userEmail }) {
+function Header({ logoPath, userEmail, loggedIn }) {
   const navigate = useNavigate();
   const handleLoginOut = (e) => {
     e.preventDefault();
@@ -19,16 +19,17 @@ function Header({ logoPath, userEmail }) {
         <Route
           path='/'
           element={
-            <>
-              <span className='header__user'>{userEmail}</span>
-              <Link
-                className='header__link'
-                to={'/sign-in'}
-                onClick={handleLoginOut}
-              >
-                Выйти
-              </Link>
-            </>
+            loggedIn && <>
+                <span className='header__user'>{userEmail}</span>
+                <Link
+                  className='header__link'
+                  to={'/sign-in'}
+                  onClick={handleLoginOut}
+                >
+                  Выйти
+                </Link>
+              </>
+              // : navigate('/sign-up', { replace: true })
           }
         />
         <Route
