@@ -152,6 +152,7 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
+          localStorage.removeItem('token')
           navigate('/sign-in', { replace: true });
         });
     } else {
