@@ -119,6 +119,7 @@ function App() {
       .login(formValue)
       .then((res) => {
         localStorage.setItem('token', res.token);
+        setUserEmail(formValue.email)
         setLoggedIn(true);
         navigate('/', { replace: true });
       })
