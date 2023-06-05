@@ -1,10 +1,11 @@
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 
-function Header({ logoPath, userEmail, loggedIn }) {
+function Header({ logoPath, userEmail, loggedIn, setLoggedIn }) {
   const navigate = useNavigate();
   const handleLoginOut = (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
+    setLoggedIn(false)
     navigate('/sign-in', { replace: true });
   };
 

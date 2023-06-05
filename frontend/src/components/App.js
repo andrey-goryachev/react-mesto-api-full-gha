@@ -182,6 +182,7 @@ function App() {
         <Header
           logoPath={logoPath}
           loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
           userEmail={userEmail}
         />
 
